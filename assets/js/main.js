@@ -39,47 +39,77 @@ function scrollHeader(){
 window.addEventListener('scroll', scrollHeader)
 
 /*==================== SWIPER DISCOVER ====================*/
-let swiper = new Swiper(".discover__container", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    loop: true,
-    spaceBetween: 32,
-    coverflowEffect: {
-        rotate: 0,
-    },
-})
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".discover__card");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show"); // Add Animation Class
+                observer.unobserve(entry.target); // Stop Observing After Animation
+            }
+        });
+    }, { threshold: 0.2 }); // Trigger when 20% of the card is visible
+
+    cards.forEach(card => observer.observe(card));
+});
 
 /*==================== VIDEO ====================*/
 const videoFile = document.getElementById('video-file'),
       videoButton = document.getElementById('video-button'),
       videoIcon = document.getElementById('video-icon')
 
-function playPause(){ 
-    if (videoFile.paused){
-        // Play video
-        videoFile.play()
-        // We change the icon
-        videoIcon.classList.add('ri-pause-line')
-        videoIcon.classList.remove('ri-play-line')
-    }
-    else {
-        // Pause video
-        videoFile.pause(); 
-        // We change the icon
-        videoIcon.classList.remove('ri-pause-line')
-        videoIcon.classList.add('ri-play-line')
 
-    }
-}
-videoButton.addEventListener('click', playPause)
 
 function finalVideo(){
     // Video ends, icon change
     videoIcon.classList.remove('ri-pause-line')
     videoIcon.classList.add('ri-play-line')
 }
+let player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtubeVideo', {
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    function scrollToVideo() {
+        let videoSection = document.getElementById('video-container');
+        if (videoSection) {
+            videoSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            console.error("Element #video-container not found!");
+        }
+    }
+    
+    document.querySelector(".discover__data").addEventListener("click", scrollToVideo);
+});
+
+
+function onPlayerReady(event) {
+    player.setVolume(100);
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                player.playVideo(); // Play when visible
+                setTimeout(() => player.unMute(), 2000); 
+            } else {
+                player.pauseVideo(); // Pause when out of view
+            }
+        });
+    }, { threshold: 0.5 }); // Trigger at 50% visibility
+
+    observer.observe(document.getElementById('youtubeVideo'));
+}
+
+
+
 // ended, when the video ends
 videoFile.addEventListener('ended', finalVideo)
 
@@ -148,27 +178,59 @@ const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'ri-sun-line'
 
-// Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem('selected-theme')
 const selectedIcon = localStorage.getItem('selected-icon')
 
-// We obtain the current theme that the interface has by validating the dark-theme class
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
 
-// We validate if the user previously chose a topic
 if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
   themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
 }
 
-// Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
-    // Add or remove the dark / icon theme
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
-    // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+let swiper = new Swiper(".discover__container", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    spaceBetween: 32,
+    coverflowEffect: {
+        rotate: 0,
+    },
+})
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function (event) {
+        let isValid = true;
+
+        document.querySelectorAll("#contactForm .form-group input, #contactForm .form-group textarea").forEach(input => {
+            if (input.value.trim() === "") {
+                isValid = false;
+                input.classList.add("shake");
+                input.style.border = "2px solid red";
+
+                // Remove shake effect after animation
+                setTimeout(() => {
+                    input.classList.remove("shake");
+                }, 300);
+            } else {
+                input.style.border = ""; // Reset border if valid
+            }
+        });
+
+        if (!isValid) {
+            event.preventDefault(); // Prevent form submission
+        }
+    });
+});
+

@@ -12,7 +12,6 @@ if(navToggle){
 }
 
 /*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
 if(navClose){
     navClose.addEventListener('click', () =>{
         navMenu.classList.remove('show-menu')
@@ -54,31 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.forEach(card => observer.observe(card));
 });
 
-/*==================== VIDEO ====================*/
-const videoFile = document.getElementById('video-file'),
-      videoButton = document.getElementById('video-button'),
-      videoIcon = document.getElementById('video-icon')
-
-
-
-function finalVideo(){
-    // Video ends, icon change
-    videoIcon.classList.remove('ri-pause-line')
-    videoIcon.classList.add('ri-play-line')
-}
-let player;
-
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('youtubeVideo', {
-        events: {
-            'onReady': onPlayerReady
-        }
-    });
-}
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     function scrollToVideo() {
         let videoSection = document.getElementById('video-container');
         if (videoSection) {
@@ -87,31 +62,44 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error("Element #video-container not found!");
         }
     }
-    
-    document.querySelector(".discover__data").addEventListener("click", scrollToVideo);
+
+    // Attach click event to all discover cards
+    document.querySelectorAll(".discover__card").forEach(card => {
+        card.addEventListener("click", scrollToVideo);
+    });
 });
 
+// Load YouTube Iframe API
+let player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtubeVideo', {
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
 
 function onPlayerReady(event) {
     player.setVolume(100);
+
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 player.playVideo(); // Play when visible
-                setTimeout(() => player.unMute(), 2000); 
+                setTimeout(() => player.unMute(), 2000);
             } else {
                 player.pauseVideo(); // Pause when out of view
             }
         });
-    }, { threshold: 0.5 }); // Trigger at 50% visibility
+    }, { threshold: 0.5 });
 
-    observer.observe(document.getElementById('youtubeVideo'));
+    observer.observe(document.getElementById('video-container'));
 }
 
-
-
-// ended, when the video ends
-videoFile.addEventListener('ended', finalVideo)
+// Load YouTube API
+const tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+document.head.appendChild(tag);
 
 
 /*==================== SHOW SCROLL UP ====================*/ 
@@ -219,7 +207,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 input.classList.add("shake");
                 input.style.border = "2px solid red";
 
-                // Remove shake effect after animation
                 setTimeout(() => {
                     input.classList.remove("shake");
                 }, 300);
@@ -229,7 +216,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (!isValid) {
-            event.preventDefault(); // Prevent form submission
         }
     });
 });

@@ -61,7 +61,7 @@
                         გადაწყვეტილებებით</h1>
                     <span class="home__data-subtitle">გახადეთ თქვენი ოპერაციები მარტივად მართვადი, გაზარდეთ
                         პროდუქტიულობა და ეფექტიანობა ჩვენი კომპანიის მიერ შექმნილი თანამედროვე ტექნოლოგიებით.</span>
-                    <a href="#discover" class="button">ჩვენი სერვისები</a>
+                    <a href="#about" class="button">ჩვენს შესახებ</a>
 
                 </div>
                 <div class="home__social">
@@ -95,9 +95,9 @@
         <section class="about section" id="about">
             <div class="about__container container grid">
                 <div class="about__data">
-                    <h2 class="section__title about__title">ჩვენ ვართ გუნდი, რომელიც ორიენტირებულია მარტივი და
+                    <h2>ჩვენ ვართ გუნდი, რომელიც ორიენტირებულია მარტივი და
                         ხარისხიანი პროდუქტების შექმნაზე.</h2>
-                    <p class="about__description"><b>Onix Digital</b> არის 2022 წელს დაარსებული კომპანია, რომელიც
+                    <p><b>Onix Digital</b> არის 2022 წელს დაარსებული კომპანია, რომელიც
                         სპეციალიზებულია ციფრული პროდუქტების შექმნაზე. ამჟამად, კომპანია წარმატებით ასრულებს რამდენიმე
                         პროექტს .... დამკვეთთან.
                         კომპანიის გუნდი დაკომპლექტებულია მაღალკვალიფიციური ტალანტებით. გუნდის მთავარი მიზანია შექმნას
@@ -108,11 +108,11 @@
                 </div>
 
                 <div class="about__img">
-                    <div class="about__img-overlay">
-                        <img src="assets/img/work-attendance.jpg" alt="" class="about__img-one">
+                    <div class="about__img-overlay_1">
+                        <img src="assets/img/services.jpg" alt="" class="about__img-one">
                     </div>
 
-                    <div class="about__img-overlay">
+                    <div class="about__img-overlay_2">
                         <img src="assets/img/queuemanage-ezgif.com-webp-to-jpg-converter.jpg" alt=""
                             class="about__img-two">
                     </div>
@@ -122,7 +122,10 @@
 
         <!--==================== DISCOVER ====================-->
         <section class="discover section" id="discover">
-            <h2 class="section__title">სერვისები</h2>
+            <div class="about__data">
+
+                <p class="upper-service" >Onix Digital-ში ვქმნით თქვენზე მორგებულ ციფრულ პროდუქტებს, რომელიც პროცესების ოპტიმიზაციას და ბიზნეს პერფორმანსის გაუმჯობესებას ისახავს მიზნად. თუ თქვენთვის მნიშვნელოვანია ოპტიმიზაცია, პროცესების გაუმჯობესება და ციფრული ტრანსფორმაცია, ჩვენ შევძლებთ გაგიწიოთ მაღალკვალიფიციური მომსახურება. </p>
+            </div>
 
             <div class="discover__container container swiper-container">
                 <div class="discover__card-wrapper">
@@ -153,26 +156,26 @@
 
         <!--==================== VIDEO ====================-->
         <section class="video section" id="video-container">
-            <div class="video-container">
-                <iframe id="youtubeVideo" src="https://www.youtube.com/embed/vR4guQH6SJE?enablejsapi=1&mute=1"
-                    title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
             <div class="video__container container">
                 <div class="video__content">
-                    <video id="video-file">
-                    </video>
+                    <iframe id="youtubeVideo" 
+                        width="560" height="315" 
+                        src="https://www.youtube.com/embed/vR4guQH6SJE?enablejsapi=1&mute=1" 
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="autoplay; encrypted-media; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </section>
+        
 
         <!--==================== SUBSCRIBE ====================-->
         <section class="subscribe section" id="contact">
             <div class="subscribe__bg">
                 <div class="about__data">
-                    <p>მოითხოვე შენს კომპანიაზე მორგებული სერვისი და ჩვენ მას რეალურად განვახორციელებთ. </p>
+                    <p class="form-upper">მოითხოვე შენს კომპანიაზე მორგებული სერვისი და ჩვენ მას რეალურად განვახორციელებთ. </p>
                 </div>
                 <hr>
                 <form id="contactForm" class="contact-form">
@@ -221,15 +224,21 @@
     <!--==================== FOOTER ====================-->
     <footer class="footer section">
         <div class="footer__container container grid">
-            <div class="footer__content grid">
-
+            <div class="footer__content">
+                <div class="footer__info">
+                    <p><strong>ტელეფონი:</strong> <a href="tel:+995123456789">+995 123 456 789</a></p>
+                    <p><strong>მისამართი:</strong> თბილისი, </p>
+                    <p><strong>ლოკაცია:</strong> <a href="https://maps.app.goo.gl/gc78AKu7xyZHaX3S9" target="_blank">Google Maps</a></p>
+                    <p><strong>ელ. ფოსტა:</strong> <a href="mailto:info@example.com">info@example.com</a></p>
+                </div>
             </div>
-
             <div class="footer__rights">
                 <p class="footer__copy">&#169;Onix Digital. 2022</p>
             </div>
         </div>
     </footer>
+
+
 
     <!--========== SCROLL UP ==========-->
     <a href="#" class="scrollup" id="scroll-up">

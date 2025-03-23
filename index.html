@@ -131,11 +131,11 @@
                 </div>
 
                 <div class="about__img">
-                    <div class="about__img-overlay_1">
+                    <div class="about__img-overlay" id="about__img-overlay_1">
                         <img src="assets/img/services.jpg" alt="" class="about__img-one">
                     </div>
 
-                    <div class="about__img-overlay_2">
+                    <div class="about__img-overlay" id="about__img-overlay_2">
                         <img src="assets/img/queuemanage-ezgif.com-webp-to-jpg-converter.jpg" alt=""
                             class="about__img-two">
                     </div>
@@ -201,44 +201,38 @@
                     <p class="form-upper">მოითხოვე შენს კომპანიაზე მორგებული სერვისი და ჩვენ მას რეალურად განვახორციელებთ. </p>
                 </div>
                 <hr>
-                <form id="contactForm" class="contact-form">
+                <div id="contactForm" class="contact-form">
                     <h3 class="form-title">მოგვწერე, რა ტიპის სერვისი გჭირდებათ თქვენი კომპანიის პროცესების გაციფრულებისთვის</h3>
                     <div class="form-grid">
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="">
+                            <input type="text" class="required"  id="name" name="name" placeholder="">
                             <label for="name">სახელი</label>
-                        </div>
-                
+                        </div>                
                         <div class="form-group">
-                            <input type="text" id="surname" name="surname" placeholder="">
+                            <input type="text" class="required"  id="surname" name="surname" placeholder="">
                             <label for="surname">გვარი</label>
-                        </div>
-                
+                        </div>                
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="">
+                            <input type="email" class="required"  id="email" name="email" placeholder="">
                             <label for="email">ელ. ფოსტა</label>
-                        </div>
-                
+                        </div>             
                         <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="">
+                            <input type="tel" class="required"  id="phone" name="phone" placeholder="">
                             <label for="phone">ტელეფონი</label>
-                        </div>
-                
+                        </div>              
                         <div class="form-group full-width">
-                            <input type="text" id="company" name="company" placeholder="">
+                            <input type="text" class="required"  id="company" name="company" placeholder="">
                             <label for="company">კომპანიის დასახელება</label>
                         </div>
                         
                         <div class="form-group full-width">
-                            <textarea id="description" name="description" placeholder=""></textarea>
+                            <textarea id="description" class="required"  name="description" placeholder=""></textarea>
                             <label for="description">მოკლე აღწერა</label>
                         </div>
                     </div>
                 
-                    <button type="submit" class="submit-call-btn">გაგზავნა</button>
-                </form>
-                
-                
+                    <button type="submit"  class="submit-call-btn"  id="submitBtn" onclick="validateForm()">გაგზავნა</button>
+                </div>
             </div>
         </section>
 
@@ -252,7 +246,7 @@
                     <p><strong>ტელეფონი:</strong> <a href="tel:+995123456789">+995 123 456 789</a></p>
                     <p><strong>მისამართი:</strong> თბილისი, </p>
                     <p><strong>ლოკაცია:</strong> <a href="https://maps.app.goo.gl/gc78AKu7xyZHaX3S9" target="_blank">Google Maps</a></p>
-                    <p><strong>ელ. ფოსტა:</strong> <a href="mailto:info@example.com">info@example.com</a></p>
+                    <p><strong>ელ. ფოსტა:</strong> <a href="mailto:info@example.com">info@Onix.com</a></p>
                 </div>
             </div>
             <div class="footer__rights">

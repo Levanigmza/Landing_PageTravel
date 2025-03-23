@@ -113,22 +113,28 @@ window.addEventListener('scroll', scrollUp)
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
-function scrollActive(){
-    const scrollY = window.pageYOffset
+function scrollActive() {
+    const scrollY = window.pageYOffset;
 
-    sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id')
+        const sectionId = current.getAttribute('id');
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        const menuLink = document.querySelector(`.nav__menu a[href*='${sectionId}']`);
+        
+        if (menuLink) { // Check if the element exists before modifying classList
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                menuLink.classList.add('active-link');
+            } else {
+                menuLink.classList.remove('active-link');
+            }
         }
-    })
+    });
 }
-window.addEventListener('scroll', scrollActive)
+
+window.addEventListener('scroll', scrollActive);
+
 
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
@@ -195,18 +201,20 @@ let swiper = new Swiper(".discover__container", {
         rotate: 0,
     },
 })
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contactForm");
 
-    form.addEventListener("submit", function (event) {
+
+function validateForm(){
+
+
         let isValid = true;
-
-        document.querySelectorAll("#contactForm .form-group input, #contactForm .form-group textarea").forEach(input => {
+        let inputs = document.querySelectorAll(".required"); // Select inputs with 'required' class
+    
+        inputs.forEach(input => {
             if (input.value.trim() === "") {
                 isValid = false;
                 input.classList.add("shake");
                 input.style.border = "2px solid red";
-
+    
                 setTimeout(() => {
                     input.classList.remove("shake");
                 }, 300);
@@ -214,9 +222,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 input.style.border = ""; // Reset border if valid
             }
         });
-
-        if (!isValid) {
+    
+        if (isValid) {
+            alert("ფორმა წარმატებით გაიგზავნა!"); // Show success alert
+            document.getElementById("contactForm").reset(); // Reset form after successful validation
         }
-    });
-});
-
+    
+    
+}

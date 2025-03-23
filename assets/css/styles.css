@@ -525,12 +525,12 @@ input {
   overflow: var(--img-hidden);
 }
 
-.about__img-overlay_1 {
+#about__img-overlay_1 {
   z-index: 10;
   margin-right: -26px;
 }
 
-.about__img-overlay_2 {
+#about__img-overlay_2 {
   z-index: 5;
   border-radius: 2px;
   border: 1px solid var(--text-color)
@@ -726,7 +726,7 @@ input {
   width: 100%;
   padding: 10px;
   border-radius: 15px;
-  background: url('/assets/img/pxfuel.jpg') no-repeat center center/cover;
+  background: #272b5b url('/assets/img/pxfuel.jpg') no-repeat center center/cover;
 
   animation: fadeIn 1s ease-in-out;
 }

@@ -787,7 +787,7 @@ input {
   width: 100%;
   padding: 20px;
     border-radius: 15px;
-  background: #272b5b ;
+  /* background: #272b5b ; */
   /* background: #272b5b  url('/assets/img/pxfuel.jpg') no-repeat center center/cover; */
 
   animation: fadeIn 1s ease-in-out;

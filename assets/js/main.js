@@ -4,7 +4,6 @@ const navMenu = document.getElementById('nav-menu'),
       navClose = document.getElementById('nav-close')
 
 /*===== MENU SHOW =====*/
-/* Validate if constant exists */
 if(navToggle){
     navToggle.addEventListener('click', () =>{
         navMenu.classList.add('show-menu')
@@ -17,13 +16,25 @@ if(navClose){
         navMenu.classList.remove('show-menu')
     })
 }
+// Close nav menu if clicked outside
+document.addEventListener('click', function (event) {
+    const navMenu = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const isClickInsideMenu = navMenu.contains(event.target);
+    const isClickOnToggle = navToggle.contains(event.target);
+
+    // If menu is open and clicked outside of menu and toggle button
+    if (navMenu.classList.contains('show-menu') && !isClickInsideMenu && !isClickOnToggle) {
+        navMenu.classList.remove('show-menu');
+    }
+});
+
 
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
     const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
@@ -167,10 +178,11 @@ sr.reveal(`.about__img-overlay,
     interval: 100,
 })
 
-/*==================== DARK LIGHT THEME ====================*/ 
 const themeButton = document.getElementById('theme-button')
+const themeName = document.getElementById('themeName')
+
 const darkTheme = 'dark-theme'
-const iconTheme = 'ri-sun-line'
+const iconTheme = 'ri-sun-line'  
 
 const selectedTheme = localStorage.getItem('selected-theme')
 const selectedIcon = localStorage.getItem('selected-icon')
@@ -182,14 +194,17 @@ if (selectedTheme) {
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
   themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
 }
+themeButton.addEventListener('click', toggleTheme)
+themeName.addEventListener('click', toggleTheme)
 
-themeButton.addEventListener('click', () => {
+
+
+function toggleTheme() {
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
-})
-
+}
 let swiper = new Swiper(".discover__container", {
     effect: "coverflow",
     grabCursor: true,
@@ -202,12 +217,9 @@ let swiper = new Swiper(".discover__container", {
     },
 })
 
-
 function validateForm(){
-
-
         let isValid = true;
-        let inputs = document.querySelectorAll(".required"); // Select inputs with 'required' class
+        let inputs = document.querySelectorAll(".required"); 
     
         inputs.forEach(input => {
             if (input.value.trim() === "") {
@@ -219,7 +231,7 @@ function validateForm(){
                     input.classList.remove("shake");
                 }, 300);
             } else {
-                input.style.border = ""; // Reset border if valid
+                input.style.border = "";
             }
         });
     

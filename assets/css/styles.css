@@ -22,6 +22,10 @@
 }
 
 @font-face {
+  font-family: 'HelveticaNeueHeavy';
+  src: url('/Landing_PageTravel/assets/fonts/HelveticaNeueHeavy.otf') format('truetype');
+}
+@font-face {
   font-family: 'HelveticaNeueLight';
   src: url('/Landing_PageTravel/assets/fonts/HelveticaNeueLight.otf') format('truetype');
 }
@@ -148,6 +152,9 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 h1,
@@ -253,7 +260,7 @@ input {
 }
 
 .nav__item a {
-  font-family: HelveticaNeueMedium !important;
+  font-family: FiraGoBold !important ;
 }
 
 .nav__menu {

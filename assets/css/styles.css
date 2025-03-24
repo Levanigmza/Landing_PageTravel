@@ -809,7 +809,7 @@ input {
   width: 100%;
   max-width: 600px;
   text-align: center;
-  font-family: HelveticaNeueLight !important;
+  font-family: FiraGoReg;
 }
 
 /* Grid Layout */

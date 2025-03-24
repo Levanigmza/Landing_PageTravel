@@ -831,6 +831,8 @@ input {
 }
 
 input {
+  font-family: FiraGoReg;
+
   width: 100%;
   padding: 12px 8px;
   border: 2px solid rgba(255, 255, 255, 0.3);
@@ -850,6 +852,7 @@ input::placeholder {
 
 /* Floating Labels */
 label {
+  font-family: FiraGoReg;
   position: absolute;
   left: 12px;
   top: 50%;

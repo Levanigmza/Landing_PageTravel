@@ -884,6 +884,7 @@ input:focus {
 
 textarea {
   padding-top: 17px;
+  font-family: FiraGoReg;
 
   width: 100%;
   height: 100px;

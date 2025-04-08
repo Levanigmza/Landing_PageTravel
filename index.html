@@ -229,8 +229,7 @@
                         რეალურად განვახორციელებთ. </p>
                 </div>
                 <hr>
-                <div id="contactForm" class="contact-form">
-                    <h3 class="form-title" id="formTitle">მოგვწერე, რა ტიპის სერვისი გჭირდებათ თქვენი კომპანიის
+                <form id="contactForm" class="contact-form" action="https://formsubmit.co/info@onyxdigital.ge"   onsubmit="validateForm(event)"  method="POST">                    <h3 class="form-title" id="formTitle">მოგვწერე, რა ტიპის სერვისი გჭირდებათ თქვენი კომპანიის
                         პროცესების გაციფრულებისთვის</h3>
                     <div class="form-grid">
                         <div class="form-group">
@@ -260,10 +259,10 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="submit-call-btn" id="submitBtn" onclick="validateForm()">
+                    <button type="submit" class="submit-call-btn" id="submitBtn" >
                         <span id="submitButtonText">გაგზავნა</span>
                     </button>
-                </div>
+                </form>
             </div>
         </section>
 
@@ -274,13 +273,13 @@
         <div class="footer__container container grid">
             <div class="footer__content">
                 <div class="footer__info">
-                    <p><strong id="footerPhoneLabel">ტელეფონი:</strong> <a href="tel:+995123456789">+995 123 456 789</a>
+                    <p><strong id="footerPhoneLabel">ტელეფონი:</strong> <a href="tel:+995557713171">+995 557 71 31 71</a>
                     </p>
-                    <p><strong id="footerAddressLabel">მისამართი:</strong> თბილისი, </p>
+                    <p><strong id="footerEmailLabel">ელ. ფოსტა:</strong> <a
+                            href="mailto:info@example.com">info@onyxdigital.ge</a></p>
+                    <p><strong id="footerAddressLabel">მისამართი:</strong> თბილისი, ც. დადიანის ქ. 7 </p>
                     <p><strong id="footerLocationLabel">ლოკაცია:</strong> <a
                             href="https://maps.app.goo.gl/gc78AKu7xyZHaX3S9" target="_blank">Google Maps</a></p>
-                    <p><strong id="footerEmailLabel">ელ. ფოსტა:</strong> <a
-                            href="mailto:info@example.com">info@Onyx.com</a></p>
                     <div class="home__social">
                         <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
                             <i class="ri-facebook-box-fill"></i>

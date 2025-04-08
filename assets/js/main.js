@@ -217,29 +217,32 @@ let swiper = new Swiper(".discover__container", {
     },
 })
 
-function validateForm(){
-        let isValid = true;
-        let inputs = document.querySelectorAll(".required"); 
-    
-        inputs.forEach(input => {
-            if (input.value.trim() === "") {
-                isValid = false;
-                input.classList.add("shake");
-                input.style.border = "2px solid red";
-    
-                setTimeout(() => {
-                    input.classList.remove("shake");
-                }, 300);
-            } else {
-                input.style.border = "";
-            }
-        });
-    
-        if (isValid) {
-            alert("ფორმა წარმატებით გაიგზავნა!"); // Show success alert
-            document.getElementById("contactForm").reset(); // Reset form after successful validation
+function validateForm(event) {
+    event.preventDefault(); // Stop default form submission
+
+    let isValid = true;
+    let form = document.getElementById("contactForm");
+    let inputs = document.querySelectorAll(".required");
+
+    inputs.forEach(input => {
+        if (input.value.trim() === "") {
+            isValid = false;
+            input.classList.add("shake");
+            input.style.border = "2px solid red";
+            setTimeout(() => input.classList.remove("shake"), 300);
+        } else {
+            input.style.border = "";
         }
-    
-    
+    });
+
+    if (isValid) {
+        alert("ფორმა წარმატებით გაიგზავნა!");
+
+        // Create a temporary form submit to allow FormSubmit to work
+        setTimeout(() => {
+            form.submit();
+        }, 500);
+    }
 }
+
 

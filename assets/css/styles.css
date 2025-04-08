@@ -1486,7 +1486,7 @@ textarea.error {
 
   .footer__rights {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .discover__card-wrapper {

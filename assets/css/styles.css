@@ -3,32 +3,32 @@
 
 @font-face {
   font-family: 'FiraGoReg';
-  src: url('/Landing_PageTravel/assets/fonts/FiraGO-Regular.otf') format('truetype');
+  src: url('/assets/fonts/FiraGO-Regular.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'FiraGoBold';
-  src: url('/Landing_PageTravel/assets/fonts/FiraGO-Bold.otf') format('truetype');
+  src: url('/assets/fonts/FiraGO-Bold.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'HelveticaNeueBlack';
-  src: url('/Landing_PageTravel/assets/fonts/HelveticaNeueBlack.otf') format('truetype');
+  src: url('/assets/fonts/HelveticaNeueBlack.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'HelveticaNeueMedium';
-  src: url('/Landing_PageTravel/assets/fonts/HelveticaNeueMedium.otf') format('truetype');
+  src: url('/assets/fonts/HelveticaNeueMedium.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'HelveticaNeueHeavy';
-  src: url('/Landing_PageTravel/assets/fonts/HelveticaNeueHeavy.otf') format('truetype');
+  src: url('/assets/fonts/HelveticaNeueHeavy.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'HelveticaNeueLight';
-  src: url('/Landing_PageTravel/assets/fonts/HelveticaNeueLight.otf') format('truetype');
+  src: url('/assets/fonts/HelveticaNeueLight.otf') format('truetype');
 }
 
 
@@ -846,7 +846,7 @@ input {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: url('/Landing_PageTravel/assets/img/pxfuel.jpg') no-repeat center center/cover;
+  background: url('/assets/img/pxfuel.jpg') no-repeat center center/cover;
 }
 
 .subscribe__bg {

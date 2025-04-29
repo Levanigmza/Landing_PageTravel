@@ -35,15 +35,24 @@
     <meta name="twitter:image" content="assets/img/onixDigitalCover2.jpg">
 
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="manifest" href="assets/img/site.webmanifest">
+
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v2">
 
 </head>
 
 <body>
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Onyx Digital</a>
+            <div class="header-logo-wrapper">
+
+                <img src="assets/img/favicon.png" alt="" class="header-logo">
+                <a href="#" class="nav__logo">Onyx Digital</a>
+            </div>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -229,7 +238,9 @@
                         რეალურად განვახორციელებთ. </p>
                 </div>
                 <hr>
-                <form id="contactForm" class="contact-form" action="https://formsubmit.co/info@onyxdigital.ge"   onsubmit="validateForm(event)"  method="POST">                    <h3 class="form-title" id="formTitle">მოგვწერე, რა ტიპის სერვისი გჭირდებათ თქვენი კომპანიის
+                <form id="contactForm" class="contact-form" action="https://formsubmit.co/info@onyxdigital.ge"
+                    onsubmit="validateForm(event)" method="POST">
+                    <h3 class="form-title" id="formTitle">მოგვწერე, რა ტიპის სერვისი გჭირდებათ თქვენი კომპანიის
                         პროცესების გაციფრულებისთვის</h3>
                     <div class="form-grid">
                         <div class="form-group">
@@ -259,7 +270,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="submit-call-btn" id="submitBtn" >
+                    <button type="submit" class="submit-call-btn" id="submitBtn">
                         <span id="submitButtonText">გაგზავნა</span>
                     </button>
                 </form>
@@ -273,7 +284,8 @@
         <div class="footer__container container grid">
             <div class="footer__content">
                 <div class="footer__info">
-                    <p><strong id="footerPhoneLabel">ტელეფონი:</strong> <a href="tel:+995557713171">+995 557 71 31 71</a>
+                    <p><strong id="footerPhoneLabel">ტელეფონი:</strong> <a href="tel:+995557713171">+995 557 71 31
+                            71</a>
                     </p>
                     <p><strong id="footerEmailLabel">ელ. ფოსტა:</strong> <a
                             href="mailto:info@example.com">info@onyxdigital.ge</a></p>
@@ -281,7 +293,7 @@
                     <p><strong id="footerLocationLabel">ლოკაცია:</strong> <a
                             href="https://maps.app.goo.gl/gc78AKu7xyZHaX3S9" target="_blank">Google Maps</a></p>
                     <div class="home__social">
-                        <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                        <a href="https://www.facebook.com/OnyxDigitalLLC/" target="_blank" class="home__social-link">
                             <i class="ri-facebook-box-fill"></i>
                         </a>
                         <a href="https://www.instagram.com/" target="_blank" class="home__social-link">

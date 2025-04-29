@@ -306,7 +306,8 @@ input {
     flex-direction: column;
     text-align: center;
   }
-  .home__social{
+
+  .home__social {
     margin-left: 1px !important;
 
   }
@@ -597,10 +598,10 @@ input {
   margin-bottom: var(--mb-2);
 }
 
-.section-hr{
+.section-hr {
   margin-top: 2%;
   width: 40%;
-  margin-left:30%;
+  margin-left: 30%;
 }
 
 .slider-container {
@@ -639,7 +640,7 @@ input {
 }
 
 .slider-buttons button {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   padding: 10px;
@@ -648,7 +649,7 @@ input {
 }
 
 .slider-buttons button:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
@@ -1042,6 +1043,7 @@ textarea.error {
     transform: translateY(0);
   }
 }
+
 @keyframes fadeDown {
   from {
     opacity: 0;
@@ -1053,6 +1055,7 @@ textarea.error {
     transform: translateY(0);
   }
 }
+
 @keyframes fadeLeft {
   from {
     opacity: 0;
@@ -1064,6 +1067,7 @@ textarea.error {
     transform: translateX(0);
   }
 }
+
 @keyframes fadeRight {
   from {
     opacity: 0;
@@ -1229,6 +1233,46 @@ textarea.error {
   gap: 25px
 }
 
+.home__social-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  height: 25.3px !important;
+  width: 25.3px !important;
+
+}
+
+.ri-facebook-box-fill {
+  color: blue !important;
+  font-size: 25px;
+}
+
+.ri-instagram-fill {
+  font-size: 25px;
+  background: radial-gradient(circle at 30% 110%,
+      #ffdb8b 0%,
+      #ee653d 25%,
+      #d42e81 50%,
+      #a237b6 75%,
+      #3e57bc 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+.header-logo{
+  width: 35px;
+  height: 35px;
+
+}
+.header-logo-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:10px
+}
 
 
 /*=============== MEDIA QUERIES ===============*/
